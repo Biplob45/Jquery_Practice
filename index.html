@@ -1,0 +1,156 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Jquery</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css" />
+	<style>
+		.box{
+			height:200px;
+			width:200px;
+			background-color:red;
+			position:relative;
+		}
+	</style>
+</head>
+<body>
+
+	<button class="h">Hide</button>
+	<button class="s">Show</button>
+	
+	<button class="sh">Show / Hide</button>
+	<button class="moveleft">Move Left</button>
+	<button class="movetop">Move Top</button>
+	<button class="moveround">Move Round</button>
+	
+	
+	
+	
+	<button class="fadetoggle">Fade Toggle</button>
+	
+    <button class="c pull-left">Click Me</button>
+    <button class="d pull-center">New</button>
+    <button class="a pull-right">Mouse Over</button>
+	
+	<select id="country">
+		<option value="bd">Bangladesh</option>
+		<option value="ind">India</option>
+	</select>
+	
+	
+	<div class="box">
+		
+	</div>
+      <script src="js/jquery-1.12.3.js"></script>   
+      <script src="js/bootstrap.min.js"></script>   
+	  
+	  <script>
+	$(document).ready(function() {
+	   // all stuff after ready
+	   $(".c").click(function(){
+			alert(" Yaaaaa clicked");
+	   });
+	});
+	
+		$(document).ready(function() {
+	   // all stuff after ready
+	   $(".d").click(function(){
+			alert(" new");
+	   });
+	});
+	
+	
+	
+		$(document).ready(function() {
+	   // all stuff after ready
+	   $(".a").mouseover(function(){
+			alert(" Mouse Over");
+	   });
+	});
+	
+	/*Change Function start*/
+	
+		$(document).ready(function() {
+	   // all stuff after ready
+    $("#country").change(function () {
+        alert($('#country option:selected').text());
+    });
+});
+	
+
+		/*Change Function End*/
+		/*Box Hide*/
+		
+			$(document).ready(function() {
+	   // all stuff after ready
+	   $(".h").click(function(){
+			//$(".box").hide();
+			//$(".box").fadeOut(3000);
+			$(".box").slideUp(3000);
+	   });
+	});
+	
+	
+	
+		$(document).ready(function() {
+	   // all stuff after ready
+	   $(".s").click(function(){
+			//$(".box").show();
+			//$(".box").fadeIn(3000);
+			$(".box").slideDown(3000);
+	   });
+	});
+	
+	
+	
+	$(document).ready(function() {
+	   // all stuff after ready
+	   $(".sh").click(function(){
+			$(".box").toggle();
+
+	   });
+	});
+	
+		
+	$(document).ready(function() {
+	   // all stuff after ready
+	   $(".fadetoggle").click(function(){
+			$(".box").fadeToggle();
+
+	   });
+	});
+	
+	
+	//Move effect...
+			
+	$(document).ready(function() {
+	   // all stuff after ready
+	   $(".moveround").click(function(){
+			$(".box").animate({ "left": "+=200px" },2000);
+			$(".box").animate({ "top": "+=200px" },2000);
+			$(".box").animate({ "left": "-=200px" },2000);
+			$(".box").animate({ "top": "-=200px" },2000);
+
+	   });
+	});
+	
+		$(document).ready(function() {
+	   // all stuff after ready
+	   $(".movetop").click(function(){
+			$(".box").animate({ "top": "+=200px" },5000);
+
+	   });
+	});
+	
+	
+		$(document).ready(function() {
+	   // all stuff after ready
+	   $(".moveleft").click(function(){
+			$(".box").animate({ "left": "+=200px" },5000);
+
+	   });
+	});
+	
+</script>
+</body>
+</html>
